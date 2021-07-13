@@ -20,21 +20,21 @@
             <a href="#!" class="brand-logo">Logo</a>
             <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
             <ul class="right hide-on-med-and-down">
-                <li><a href="login.html">Login</a></li>
-                <li><a href="register.html">Register</a></li>
-                <li><a href="recipes.html">Browse Recipes</a></li>
-                <li><a href="add.html">Add a Recipe</a></li>
-                <li><a href="edit.html">Edit Your Recipes</a></li>
+                <li><a href="{{ url_for('login') }}">Login</a></li>
+                <li><a href="{{ url_for('register') }}">Register</a></li>
+                <li><a href="{{ url_for('recipes') }}">Browse Recipes</a></li>
+                <li><a href="{{ url_for('add') }}">Add a Recipe</a></li>
+                <li><a href="{{ url_for('edit') }}">Edit Your Recipes</a></li>
             </ul>
             </div>
         </nav>
 
         <ul class="sidenav" id="mobile-demo">
-            <li><a href="login.html">Login</a></li>
-                <li><a href="register.html">Register</a></li>
-                <li><a href="recipes.html">Browse Recipes</a></li>
-                <li><a href="add.html">Add a Recipe</a></li>
-                <li><a href="edit.html">Edit Your Recipes</a></li>
+            <li><a href="{{ url_for('login') }}">Login</a></li>
+            <li><a href="{{ url_for('register') }}">Register</a></li>
+            <li><a href="{{ url_for('recipes') }}">Browse Recipes</a></li>
+            <li><a href="{{ url_for('add') }}">Add a Recipe</a></li>
+            <li><a href="{{ url_for('edit') }}">Edit Your Recipes</a></li>
         </ul>
     </header>
 
