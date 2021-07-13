@@ -1,2 +1,92 @@
 {% extends "base.html" %}
 {% block content%}
+
+
+
+
+<h3 class="light-blue-text text-darken-4 center-align">Add Recipe</h3>
+
+    <div class="row card-panel grey lighten-5">
+        <form class="col s12" method="POST" action="{{ url_for('add_task') }}">
+            <!-- recipe name -->
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-pencil-alt prefix light-blue-text text-darken-4"></i>
+                    <input id="task_name" name="task_name" minlength="5" maxlength="50"
+                        type="text" class="validate" required>
+                    <label for="task_name">Recipe Name</label>
+                </div>
+            </div>
+            <!-- cooking method selection -->
+			<div class="row">
+				<div class="input-field col s12">
+                    <i class="fas fa-folder-open prefix light-blue-text text-darken-4"></i>
+					<select id="cooking_method" name="cooking_method" class="validate" required>
+                        <option value="" disabled selected>Choose Category</option>
+                        {% for method in methods %}
+                            <option value="{{ method.cooking_method }}">{{ method.cooking_method }}</option>
+                        {% endfor %}
+                    </select>
+					<label for="cooking_method">Cooking Method</label>
+				</div>
+			</div>
+            <!-- cooking tool selection -->
+			<div class="row">
+				<div class="input-field col s12">
+                    <i class="fas fa-folder-open prefix light-blue-text text-darken-4"></i>
+					<select id="cooking_tool" name="cooking_tool" class="validate" required>
+                        <option value="" disabled selected>Choose Category</option>
+                        {% for tool in tools %}
+                            <option value="{{ tool.cooking_tool }}">{{ tool.cooking_tool }}</option>
+                        {% endfor %}
+                    </select>
+					<label for="cooking_tool">Cooking Tool</label>
+				</div>
+			</div>
+            <!-- task description -->
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-align-left prefix light-blue-text text-darken-4"></i>
+                    <textarea id="task_description" name="task_description" minlength="5"
+                        maxlength="200" class="materialize-textarea validate" required></textarea>
+                    <label for="task_description">Task Description</label>
+                </div>
+            </div>
+            <!-- is veggie toggle -->
+			<div class="row">
+				<div class="input-field col s6">
+					<div class="switch">
+                        <i class="fas fa-exclamation-circle prefix light-blue-text text-darken-4"></i>
+						<label for="is_urgent">
+                            <input type="checkbox" id="is_veggie" name="is_veggie">
+                            <span class="lever"></span>
+                            Is Vegetarian
+                        </label>
+					</div>
+				</div>
+			</div>
+            <!-- is vegan toggle -->
+			<div class="row">
+				<div class="input-field col s6">
+					<div class="switch">
+                        <i class="fas fa-exclamation-circle prefix light-blue-text text-darken-4"></i>
+						<label for="is_urgent">
+                            <input type="checkbox" id="is_vegan" name="is_vegan">
+                            <span class="lever"></span>
+                            Is Vegan
+                        </label>
+					</div>
+				</div>
+			</div>
+            <!-- submit button -->
+            <div class="row">
+                <div class="col s12 center-align">
+                    <button type="submit" class="btn-large light-blue darken-1 text-shadow">
+                        Add Recipe <i class="fas fa-plus-square right"></i>
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+{% endblock %}

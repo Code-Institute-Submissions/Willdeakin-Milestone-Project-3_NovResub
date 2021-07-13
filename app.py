@@ -41,7 +41,7 @@ def register():
         # put the new user into 'session' cookie
         session["user"] = request.form.get("username").lower()
         flash("Registration Successful!")
-        return redirect(url_for("profile", username=session["user"]))
+        return redirect(url_for("recipes", username=session["user"]))
 
     return render_template("register.html")
 
@@ -61,7 +61,7 @@ def login():
                         flash("Welcome, {}".format(
                             request.form.get("username")))
                         return redirect(url_for(
-                            "profile", username=session["user"]))
+                            "recipes", username=session["user"]))
             else:
                 # invalid password match
                 flash("Incorrect Username and/or Password")
@@ -87,6 +87,19 @@ def recipes():
 
 @app.route("/add", methods=["GET", "POST"])
 def add():
+    if request.method == "POST":
+        is_veggie = "on" if request.form.get("is_veggie") else "off"
+        is_vegan = "on" if request.form.get("is_vegan") else "off"
+        recipe = {
+            "recipe_name": request.form.get("recipe_name"),
+            "cooking_method": request.form.get("cooking_method"),
+            "cooking_tool": request.form.get("cooking_tool"),
+            "TTC": request.form.get("TTC"),
+            "website_link": request.form.get("website_link"),
+            "country": request.form.get("country"),
+        }
+
+
     return render_template("add.html")
 
 
