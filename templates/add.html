@@ -22,7 +22,7 @@
 				<div class="input-field col s12">
                     <i class="fas fa-folder-open prefix light-blue-text text-darken-4"></i>
 					<select id="cooking_method" name="cooking_method" class="validate" required>
-                        <option value="" disabled selected>Choose Category</option>
+                        <option value="" disabled selected>Choose Cooking Method</option>
                         {% for method in methods %}
                             <option value="{{ method.cooking_method }}">{{ method.cooking_method }}</option>
                         {% endfor %}
@@ -35,7 +35,7 @@
 				<div class="input-field col s12">
                     <i class="fas fa-folder-open prefix light-blue-text text-darken-4"></i>
 					<select id="cooking_tool" name="cooking_tool" class="validate" required>
-                        <option value="" disabled selected>Choose Category</option>
+                        <option value="" disabled selected>Choose Cooking Tool</option>
                         {% for tool in tools %}
                             <option value="{{ tool.cooking_tool }}">{{ tool.cooking_tool }}</option>
                         {% endfor %}
@@ -43,15 +43,39 @@
 					<label for="cooking_tool">Cooking Tool</label>
 				</div>
 			</div>
-            <!-- task description -->
+            <!-- Time to cook -->
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-align-left prefix light-blue-text text-darken-4"></i>
-                    <textarea id="task_description" name="task_description" minlength="5"
-                        maxlength="200" class="materialize-textarea validate" required></textarea>
-                    <label for="task_description">Task Description</label>
+                    <textarea id="TTC" name="TTC" 
+                     class="materialize-textarea validate" required></textarea>
+                    <label for="TTC">Time To Cook</label>
+                    <span class="helper-text" data-error="wrong" data-success="right">Minutes</span>
                 </div>
             </div>
+
+            <!-- recipe link  -->
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-align-left prefix light-blue-text text-darken-4"></i>
+                    <textarea id="website_link" name="website_link" minlength="5"
+                        maxlength="200" class="materialize-textarea validate autocomplete" required></textarea>
+                    <label for="website_link">Link to recipe online</label>
+                </div>
+            </div>
+            <!-- country selection -->
+			<div class="row">
+				<div class="input-field col s12">
+                    <i class="fas fa-folder-open prefix light-blue-text text-darken-4"></i>
+					<select id="country" name="country" class="validate" required>
+                        <option value="" disabled selected>Choose Country</option>
+                        {% for country in countries %}
+                            <option value="{{ country.country }}">{{ country.country }}</option>
+                        {% endfor %}
+                    </select>
+					<label for="country">Country</label>
+				</div>
+			</div>
             <!-- is veggie toggle -->
 			<div class="row">
 				<div class="input-field col s6">
@@ -60,7 +84,7 @@
 						<label for="is_veggie">
                             <input type="checkbox" id="is_veggie" name="is_veggie">
                             <span class="lever"></span>
-                            Is Vegetarian
+                            Vegetarian
                         </label>
 					</div>
 				</div>
@@ -73,7 +97,7 @@
 						<label for="is_vegan">
                             <input type="checkbox" id="is_vegan" name="is_vegan">
                             <span class="lever"></span>
-                            Is Vegan
+                            Vegan
                         </label>
 					</div>
 				</div>

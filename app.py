@@ -96,7 +96,7 @@ def add():
             "cooking_tool": request.form.get("cooking_tool"),
             "TTC": request.form.get("TTC"),
             "website_link": request.form.get("website_link"),
-            "country": request.form.get("country"),
+            "country_name": request.form.get("country"),
         }
 
 
