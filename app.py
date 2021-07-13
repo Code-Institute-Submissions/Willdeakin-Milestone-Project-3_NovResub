@@ -99,8 +99,10 @@ def add():
             "country_name": request.form.get("country"),
         }
 
-
-    return render_template("add.html")
+    methods = mongo.db.categories.find().sort("cooking_method", 1)
+    tools = mongo.db.categories.find().sort("category_tool", 1)
+    countries = mongo.db.categories.find().sort("countries", 1)
+    return render_template("add.html", methods=methods, tools=tools, countries=countries)
 
 
 
