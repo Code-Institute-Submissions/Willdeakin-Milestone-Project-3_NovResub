@@ -80,11 +80,6 @@ def edit():
     return render_template("edit.html")
 
 
-@app.route("/recipes", methods=["GET", "POST"])
-def recipes():
-    return render_template("recipes.html")
-
-
 @app.route("/add", methods=["GET", "POST"])
 def add():
     if request.method == "POST":
@@ -106,7 +101,10 @@ def add():
 
 
 
-
+@app.route("/recipes")
+def recipes():
+    recipes = list(mongo.db.recipe.find())
+    return render_template("recipes.html", recipes=recipes)
 
 
 
