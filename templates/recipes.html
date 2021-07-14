@@ -1,20 +1,14 @@
 {% extends "base.html" %}
 {% block content%}
 
-<h3 class="light-blue-text text-darken-4 center-align">All Tasks</h3>
+<h3 class="light-blue-text text-darken-4 center-align">All Recipes</h3>
 
     <ul class="collapsible">
         {% for recipe in recipes %}
         <li>
             <div class="collapsible-header white-text light-blue darken-4 text-shadow">
                 <div class="col s3">
-                    <i class="fas fa-caret-down"></i>
-                    {% if session.user|lower == task.created_by|lower %}
-                        <a href="{{ url_for('edit', recipe_id=recipe._id) }}" class="btn-small light-blue lighten-1">Edit</a>
-                    {% endif %}
-                </div>
-                <div class="col s9">
-                    <strong>{{ recipe.task_name }}</strong> : {{ task.due_date }}
+                    <strong>{{ recipe.recipe_name }}</strong>
                     {% if recipe.is_veggie == "on" %}
                         <i class="fas fa-exclamation-circle light-blue-text text-lighten-2 tooltipped"
                             data-position="right" data-tooltip="vegetarian"></i>
@@ -24,11 +18,19 @@
                             data-position="right" data-tooltip="vegan"></i>
                     {% endif %}
                 </div>
+                <div class="col s3">
+                    <i class="fas fa-caret-down"></i>
+                    {% if session.user|lower == recipe.created_by|lower %}
+                        <a href="{{ url_for('edit', recipe_id=recipe._id) }}" class="btn-small light-blue lighten-1">Edit</a>
+                    {% endif %}
+                </div>
             </div>
             <div class="collapsible-body">
-                <strong>{{ recipe.recipe_name }}</strong>
-                <p>{{ recipe.cooking_method }}</p>
-                <p><em>by: {{ recipe.created_by }}</em></p>
+                <strong>Cooked using: {{ recipe.cooking_tool }}</strong>
+                <p>Takes approximately {{ recipe.TTC }} while {{ recipe.cooking_method }}.</p>
+                <p>Find a link to this recipe <a href="{{ recipe.website_link }}" target="none">here</a></p>
+                <p>This is a recipe native to {{ recipe.country_name }}</p>
+                <p><em>Recipe created by: {{ recipe.created_by }}.</em></p>
             </div>
         </li>
         {% endfor %}
