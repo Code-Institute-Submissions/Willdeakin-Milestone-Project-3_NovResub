@@ -77,7 +77,11 @@ def login():
 
 @app.route("/edit", methods=["GET", "POST"])
 def edit():
-    return render_template("edit.html")
+    recipe = mongo.db.recipe.find_one({"_id": ObjectId()})
+    methods = mongo.db.categories.find().sort("cooking_method", 1)
+    tools = mongo.db.categories.find().sort("category_tool", 1)
+    countries = mongo.db.categories.find().sort("countries", 1)
+    return render_template("edit.html", methods=methods, tools=tools, countries=countries)
 
 
 @app.route("/add", methods=["GET", "POST"])
@@ -93,6 +97,9 @@ def add():
             "website_link": request.form.get("website_link"),
             "country_name": request.form.get("country"),
         }
+        mongo.db.recipes.insert_one(recipe)
+        flash("Recipe Successfully Added")
+        return redirect(url_for("recipes"))
 
     methods = mongo.db.categories.find().sort("cooking_method", 1)
     tools = mongo.db.categories.find().sort("category_tool", 1)
