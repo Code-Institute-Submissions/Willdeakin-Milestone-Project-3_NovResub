@@ -11,7 +11,7 @@
             <!-- recipe name -->
             <div class="row">
                 <div class="input-field col s12">
-                    <i class="fas fa-pencil-alt prefix light-blue-text text-darken-4"></i>
+                    <i class="fas fa-pencil-alt prefix charcoal"></i>
                     <input id="recipe_name" name="recipe_name" minlength="5" maxlength="50"
                         type="text" class="validate" required>
                     <label for="recipe_name">Recipe Name</label>
@@ -20,7 +20,7 @@
             <!-- cooking method selection -->
 			<div class="row">
 				<div class="input-field col s12">
-                    <i class="fas fa-folder-open prefix light-blue-text text-darken-4"></i>
+                    <i class="fas fa-folder-open prefix charcoal"></i>
 					<select id="cooking_method" name="cooking_method" class="validate" required>
                         <option value="" disabled selected>Choose Cooking Method</option>
                         {% for method in methods %}
@@ -33,7 +33,7 @@
             <!-- cooking tool selection -->
 			<div class="row">
 				<div class="input-field col s12">
-                    <i class="fas fa-folder-open prefix light-blue-text text-darken-4"></i>
+                    <i class="fas fa-folder-open prefix charcoal"></i>
 					<select id="cooking_tool" name="cooking_tool" class="validate" required>
                         <option value="" disabled selected>Choose Cooking Tool</option>
                         {% for tool in tools %}
@@ -46,7 +46,7 @@
             <!-- Time to cook -->
             <div class="row">
                 <div class="input-field col s12">
-                    <i class="fas fa-align-left prefix light-blue-text text-darken-4"></i>
+                    <i class="fas fa-align-left prefix charcoal"></i>
                     <textarea id="TTC" name="TTC" 
                      class="materialize-textarea validate" required></textarea>
                     <label for="TTC">Time To Cook</label>
@@ -57,7 +57,7 @@
             <!-- recipe link  -->
             <div class="row">
                 <div class="input-field col s12">
-                    <i class="fas fa-align-left prefix light-blue-text text-darken-4"></i>
+                    <i class="fas fa-align-left prefix charcoal"></i>
                     <textarea id="website_link" name="website_link" minlength="5"
                         maxlength="200" class="materialize-textarea validate autocomplete" required></textarea>
                     <label for="website_link">Link to recipe online</label>
@@ -66,7 +66,7 @@
             <!-- country selection -->
 			<div class="row">
 				<div class="input-field col s12">
-                    <i class="fas fa-folder-open prefix light-blue-text text-darken-4"></i>
+                    <i class="fas fa-folder-open prefix charcoal"></i>
 					<select id="country" name="country" class="validate" required>
                         <option value="" disabled selected>Choose Country</option>
                         {% for country in countries %}
@@ -80,7 +80,7 @@
 			<div class="row">
 				<div class="input-field col s6">
 					<div class="switch">
-                        <i class="fas fa-exclamation-circle prefix light-blue-text text-darken-4"></i>
+                        <i class="fas fa-exclamation-circle prefix charcoal"></i>
 						<label for="is_veggie">
                             <input type="checkbox" id="is_veggie" name="is_veggie">
                             <span class="lever"></span>
@@ -93,7 +93,7 @@
 			<div class="row">
 				<div class="input-field col s6">
 					<div class="switch">
-                        <i class="fas fa-exclamation-circle prefix light-blue-text text-darken-4"></i>
+                        <i class="fas fa-exclamation-circle prefix charcoal"></i>
 						<label for="is_vegan">
                             <input type="checkbox" id="is_vegan" name="is_vegan">
                             <span class="lever"></span>
@@ -105,7 +105,7 @@
             <!-- submit button -->
             <div class="row">
                 <div class="col s12 center-align">
-                    <button type="submit" class="btn-large light-blue darken-1 text-shadow">
+                    <button type="submit" class="btn-large persian-green-button">
                         Add Recipe <i class="fas fa-plus-square right"></i>
                     </button>
                 </div>

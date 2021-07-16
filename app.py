@@ -75,14 +75,6 @@ def login():
     return render_template("login.html")
 
 
-@app.route("/edit", methods=["GET", "POST"])
-def edit():
-    recipe = mongo.db.recipe.find_one({"_id": ObjectId()})
-    methods = mongo.db.categories.find().sort("cooking_method", 1)
-    tools = mongo.db.categories.find().sort("category_tool", 1)
-    countries = mongo.db.categories.find().sort("countries", 1)
-    return render_template("edit.html", methods=methods, tools=tools, countries=countries)
-
 
 @app.route("/add", methods=["GET", "POST"])
 def add():
@@ -115,8 +107,19 @@ def recipes():
 
 
 
+@app.route("/edit/<recipe_id>", methods=["GET", "POST"])
+def edit(recipe_id):
+    recipe = mongo.db.recipe.find_one({"_id": ObjectId(recipe_id)})
+    methods = mongo.db.categories.find().sort("cooking_method", 1)
+    tools = mongo.db.categories.find().sort("category_tool", 1)
+    countries = mongo.db.categories.find().sort("countries", 1)
+    return render_template("edit.html", methods=methods, tools=tools, countries=countries)
 
-
+@app.route("/delete/<recipe_id>")
+def delete(recipe_id):
+    mongo.db.tasks.remove({"_id": ObjectId(recipe_id)})
+    flash("Recipe Successfully Deleted")
+    return redirect(url_for("recipes"))
 
 
 if __name__ == "__main__":
