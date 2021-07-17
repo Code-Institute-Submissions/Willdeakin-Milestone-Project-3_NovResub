@@ -113,7 +113,7 @@ def edit(recipe_id):
     methods = mongo.db.categories.find().sort("cooking_method", 1)
     tools = mongo.db.categories.find().sort("category_tool", 1)
     countries = mongo.db.categories.find().sort("countries", 1)
-    return render_template("edit.html", methods=methods, tools=tools, countries=countries)
+    return render_template("edit.html", methods=methods, tools=tools, countries=countries, recipe=recipe)
 
 @app.route("/delete/<recipe_id>")
 def delete(recipe_id):
@@ -126,4 +126,3 @@ if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
             debug=True)
-
