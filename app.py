@@ -93,10 +93,11 @@ def add():
         flash("Recipe Successfully Added")
         return redirect(url_for("recipes"))
 
-    methods = mongo.db.recipe.find().sort("cooking_method", 1)
-    tools = mongo.db.reccipe.find().sort("cooking_tool", 1)
-    countries = mongo.db.recipe.find().sort("countries", 1)
-    return render_template("add.html", methods=methods, tools=tools, countries=countries)
+    methods = mongo.db.methods.find()
+    tools = mongo.db.tools.find()
+    countries = mongo.db.countries.find()
+    return render_template("add.html", methods=methods, tools=tools, 
+    countries=countries)
 
 
 
@@ -110,9 +111,9 @@ def recipes():
 @app.route("/edit/<recipe_id>", methods=["GET", "POST"])
 def edit(recipe_id):
     recipe = mongo.db.recipe.find_one({"_id": ObjectId(recipe_id)})
-    methods = mongo.db.recipe.find().sort("cooking_method", 1)
-    tools = mongo.db.recipe.find().sort("category_tool", 1)
-    countries = mongo.db.recipe.find().sort("countries", 1)
+    methods = mongo.db.methods.find()
+    tools = mongo.db.tools.find()
+    countries = mongo.db.countries.find()
     return render_template("edit.html", methods=methods, tools=tools, countries=countries, recipe=recipe)
 
 @app.route("/delete/<recipe_id>")
