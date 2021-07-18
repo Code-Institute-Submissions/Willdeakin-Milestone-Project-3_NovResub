@@ -82,20 +82,20 @@ def add():
         is_veggie = "on" if request.form.get("is_veggie") else "off"
         is_vegan = "on" if request.form.get("is_vegan") else "off"
         recipe = {
-            "recipe_name": request.form.get("recipe_name"),
-            "cooking_method": request.form.get("cooking_method"),
-            "cooking_tool": request.form.get("cooking_tool"),
-            "TTC": request.form.get("TTC"),
-            "website_link": request.form.get("website_link"),
-            "country_name": request.form.get("country"),
+            "recipe_name": request.form.get("recipe_name").lower(),
+            "cooking_method": request.form.get("cooking_method").lower(),
+            "cooking_tool": request.form.get("cooking_tool").lower(),
+            "TTC": request.form.get("TTC").lower(),
+            "website_link": request.form.get("website_link").lower(),
+            "country_name": request.form.get("country").lower(),
         }
         mongo.db.recipes.insert_one(recipe)
         flash("Recipe Successfully Added")
         return redirect(url_for("recipes"))
 
-    methods = mongo.db.categories.find().sort("cooking_method", 1)
-    tools = mongo.db.categories.find().sort("category_tool", 1)
-    countries = mongo.db.categories.find().sort("countries", 1)
+    methods = mongo.db.recipe.find().sort("cooking_method", 1)
+    tools = mongo.db.reccipe.find().sort("cooking_tool", 1)
+    countries = mongo.db.recipe.find().sort("countries", 1)
     return render_template("add.html", methods=methods, tools=tools, countries=countries)
 
 
@@ -110,9 +110,9 @@ def recipes():
 @app.route("/edit/<recipe_id>", methods=["GET", "POST"])
 def edit(recipe_id):
     recipe = mongo.db.recipe.find_one({"_id": ObjectId(recipe_id)})
-    methods = mongo.db.categories.find().sort("cooking_method", 1)
-    tools = mongo.db.categories.find().sort("category_tool", 1)
-    countries = mongo.db.categories.find().sort("countries", 1)
+    methods = mongo.db.recipe.find().sort("cooking_method", 1)
+    tools = mongo.db.recipe.find().sort("category_tool", 1)
+    countries = mongo.db.recipe.find().sort("countries", 1)
     return render_template("edit.html", methods=methods, tools=tools, countries=countries, recipe=recipe)
 
 @app.route("/delete/<recipe_id>")
