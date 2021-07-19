@@ -81,7 +81,7 @@ def logout():
     flash("You have been logged out")
     session.pop("user")
     return redirect(url_for("login"))
-    
+
 
 @app.route("/add", methods=["GET", "POST"])
 def add():
@@ -136,6 +136,7 @@ def edit(recipe_id):
             }
             mongo.db.recipe.update({"_id": ObjectId(recipe_id)}, submit)
             flash("Recipe Successfully Edited")
+            return redirect(url_for("recipes"))
 
     recipe = mongo.db.recipe.find_one({"_id": ObjectId(recipe_id)})
     methods = mongo.db.methods.find()
