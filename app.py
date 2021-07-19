@@ -75,6 +75,13 @@ def login():
     return render_template("login.html")
 
 
+@app.route("/logout")
+def logout():
+    # remove user from session cookie
+    flash("You have been logged out")
+    session.pop("user")
+    return redirect(url_for("login"))
+    
 
 @app.route("/add", methods=["GET", "POST"])
 def add():
@@ -135,6 +142,7 @@ def edit(recipe_id):
     tools = mongo.db.tools.find()
     countries = mongo.db.countries.find()
     return render_template("edit.html", methods=methods, tools=tools, countries=countries, recipe=recipe)
+
 
 @app.route("/delete/<recipe_id>")
 def delete(recipe_id):

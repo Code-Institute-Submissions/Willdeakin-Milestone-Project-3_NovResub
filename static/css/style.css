@@ -22,9 +22,6 @@ body{
 .charcoal-back{
     background-color: #264653ff;
 }
-.sandy-brown-back{
-    background-color: #2a9d8fff;
-}
 .persian-green-button{
     background-color: #2a9d8fff;
     align-content: center;
@@ -35,4 +32,10 @@ body{
 }
 .small-text{
     font-size: 1.2rem;
+}
+
+.eating-requirement{
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    color: #2a9d8fff;
 }
