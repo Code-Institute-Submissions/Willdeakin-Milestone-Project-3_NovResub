@@ -24,7 +24,7 @@
 					<select id="cooking_method" name="cooking_method" class="validate" required>
                         <option value="" selected>Choose Cooking Method</option>
                         {% for method in methods %}
-                            <option value="{{ method.cooking_method }}">{{ method.cooking_method }}</option>
+                            <option value="{{ method.method }}">{{ method.method }}</option>
                         {% endfor %}
                     </select>
 					<label for="cooking_method">Cooking Method</label>
@@ -37,7 +37,7 @@
 					<select id="cooking_tool" name="cooking_tool" class="validate" required>
                         <option value="" selected>Choose Cooking Tool</option>
                         {% for tool in tools %}
-                            <option value="{{ tool.cooking_tool }}">{{ tool.cooking_tool }}</option>
+                            <option value="{{ tool.tool }}">{{ tool.tool }}</option>
                         {% endfor %}
                     </select>
 					<label for="cooking_tool">Cooking Tool</label>

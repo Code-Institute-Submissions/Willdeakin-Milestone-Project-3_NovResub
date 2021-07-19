@@ -83,13 +83,14 @@ def add():
         is_vegan = "on" if request.form.get("is_vegan") else "off"
         recipe = {
             "recipe_name": request.form.get("recipe_name").lower(),
-            "cooking_method": request.form.get("cooking_method").lower(),
-            "cooking_tool": request.form.get("cooking_tool").lower(),
+            "cooking_method": request.form.get("cooking_method"),
+            "cooking_tool": request.form.get("cooking_tool"),
             "TTC": request.form.get("TTC").lower(),
             "website_link": request.form.get("website_link").lower(),
-            "country_name": request.form.get("country").lower(),
+            "country_name": request.form.get("country"),
+            "created_by": session["user"]
         }
-        mongo.db.recipes.insert_one(recipe)
+        mongo.db.recipe.insert_one(recipe)
         flash("Recipe Successfully Added")
         return redirect(url_for("recipes"))
 
@@ -118,7 +119,7 @@ def edit(recipe_id):
 
 @app.route("/delete/<recipe_id>")
 def delete(recipe_id):
-    mongo.db.tasks.remove({"_id": ObjectId(recipe_id)})
+    mongo.db.recipe.remove({"_id": ObjectId(recipe_id)})
     flash("Recipe Successfully Deleted")
     return redirect(url_for("recipes"))
 
