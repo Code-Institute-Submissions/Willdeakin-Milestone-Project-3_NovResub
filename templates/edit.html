@@ -8,8 +8,9 @@
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-pencil-alt prefix charcoal"></i>
-                    <input id="recipe_name" name="recipe_name" minlength="5" maxlength="50"
-                        type="text" class="validate" required>
+                    <textarea id="recipe_name" name="recipe_name" minlength="5"
+                    maxlength="50" class="materialize-textarea validate autocomplete" required>
+                    {{- recipe.recipe_name -}}</textarea>
                     <label for="recipe_name">Recipe Name</label>
                 </div>
             </div>
@@ -18,7 +19,7 @@
                 <div class="input-field col s12">
                     <i class="fas fa-folder-open prefix charcoal"></i>
                     <select id="cooking_method" name="cooking_method" class="validate" required>
-                        <option value="" disabled selected>Choose Cooking Method</option>
+                        <option value="" disabled>Choose Cooking Method</option>
                         {% for method in methods %}
                             {% if method.cooking_method == recipe.cooking_method %}
                                 <option value="{{ method.method }}" selected>{{ method.method }}</option>
@@ -35,7 +36,7 @@
                 <div class="input-field col s12">
                     <i class="fas fa-folder-open prefix charcoal"></i>
                     <select id="cooking_tool" name="cooking_tool" class="validate" required>
-                        <option value="" disabled selected>Choose Cooking Tool</option>
+                        <option value="" disabled>Choose Cooking Tool</option>
                         {% for tool in tools %}
                             {% if tool.cooking_tool== recipe.cooking_tool %}
                                 <option value="{{ tool.tool }}" selected>{{ tool.tool }}</option>
@@ -52,7 +53,7 @@
                 <div class="input-field col s12">
                     <i class="fas fa-align-left prefix charcoal"></i>
                     <textarea id="TTC" name="TTC" 
-                    class="materialize-textarea validate" required></textarea>
+                    class="materialize-textarea validate" required>{{- recipe.TTC -}}</textarea>
                     <label for="TTC">Time To Cook</label>
                     <span class="helper-text" data-error="wrong" data-success="right">Minutes</span>
                 </div>
@@ -63,7 +64,8 @@
                 <div class="input-field col s12">
                     <i class="fas fa-align-left prefix charcoal"></i>
                     <textarea id="website_link" name="website_link" minlength="5"
-                        maxlength="200" class="materialize-textarea validate autocomplete" required></textarea>
+                        maxlength="200" class="materialize-textarea validate autocomplete" required>
+                        {{- recipe.website_link -}}</textarea>
                     <label for="website_link">Link to recipe online</label>
                 </div>
             </div>
@@ -72,9 +74,9 @@
                 <div class="input-field col s12">
                     <i class="fas fa-folder-open prefix charcoal"></i>
                     <select id="country" name="country" class="validate" required>
-                        <option value="" disabled selected>Choose Country</option>
+                        <option value="" disabled>Choose Country</option>
                         {% for country in countries %}
-                            {% if country.country== recipe.country %}
+                            {% if country.country== recipe.country_name %}
                                 <option value="{{ country.country_name }}" selected>{{ country.country_name }}</option>
                             {% else %}
                                 <option value="{{ country.country_name }}">{{ country.country_name }}</option>
@@ -89,8 +91,12 @@
                 <div class="input-field col s6">
                     <div class="switch">
                         <i class="fas fa-exclamation-circle prefix charcoal"></i>
-                        <label for="is_veggie">
-                            <input type="checkbox" id="is_veggie" name="is_veggie">
+                        <label for="is_veggie"></label>
+                            {% if recipe.is_veggie == "on" %}
+                                <input type="checkbox" id="is_veggie" name="is_veggie" checked>
+                            {% else %}
+                                <input type="checkbox" id="is_veggie" name="is_veggie">
+                            {% endif %}
                             <span class="lever"></span>
                             Vegetarian
                         </label>
@@ -103,7 +109,11 @@
                     <div class="switch">
                         <i class="fas fa-exclamation-circle prefix charcoal"></i>
                         <label for="is_vegan">
-                            <input type="checkbox" id="is_vegan" name="is_vegan">
+                            {% if recipe.is_vegan == "on" %}
+                                <input type="checkbox" id="is_vegan" name="is_vegan" checked>
+                            {% else %}
+                                <input type="checkbox" id="is_vegan" name="is_vegan">
+                            {% endif %}
                             <span class="lever"></span>
                             Vegan
                         </label>

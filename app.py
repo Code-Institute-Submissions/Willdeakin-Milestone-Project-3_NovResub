@@ -87,7 +87,7 @@ def add():
             "cooking_tool": request.form.get("cooking_tool"),
             "TTC": request.form.get("TTC").lower(),
             "website_link": request.form.get("website_link").lower(),
-            "country_name": request.form.get("country"),
+            "country_name": request.form.get("country_name"),
             "created_by": session["user"]
         }
         mongo.db.recipe.insert_one(recipe)
