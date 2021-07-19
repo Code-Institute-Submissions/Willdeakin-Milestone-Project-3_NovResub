@@ -88,6 +88,8 @@ def add():
             "TTC": request.form.get("TTC").lower(),
             "website_link": request.form.get("website_link").lower(),
             "country_name": request.form.get("country_name"),
+            "is_veggie": is_veggie,
+            "is_vegan": is_vegan,
             "created_by": session["user"]
         }
         mongo.db.recipe.insert_one(recipe)
@@ -111,6 +113,23 @@ def recipes():
 
 @app.route("/edit/<recipe_id>", methods=["GET", "POST"])
 def edit(recipe_id):
+    if request.method == "POST":
+            is_veggie = "on" if request.form.get("is_veggie") else "off"
+            is_vegan = "on" if request.form.get("is_vegan") else "off"
+            submit = {
+                "recipe_name": request.form.get("recipe_name").lower(),
+                "cooking_method": request.form.get("cooking_method"),
+                "cooking_tool": request.form.get("cooking_tool"),
+                "TTC": request.form.get("TTC").lower(),
+                "website_link": request.form.get("website_link").lower(),
+                "country_name": request.form.get("country_name"),
+                "is_veggie": is_veggie,
+                "is_vegan": is_vegan,
+                "created_by": session["user"]
+            }
+            mongo.db.recipe.update({"_id": ObjectId(recipe_id)}, submit)
+            flash("Recipe Successfully Edited")
+
     recipe = mongo.db.recipe.find_one({"_id": ObjectId(recipe_id)})
     methods = mongo.db.methods.find()
     tools = mongo.db.tools.find()
