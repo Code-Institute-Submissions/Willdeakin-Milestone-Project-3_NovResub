@@ -74,13 +74,15 @@ I used no images across this website, only using [Flag-icons](https://flagicons.
 * [Balsamiq Wireframes](https://balsamiq.com/wireframes/?gclid=CjwKCAiA9bmABhBbEiwASb35Vz5eNriDRNqnP0yfLYeqI0aYF9r5Qf45QNEoXootlZ-VmwSloDl8rRoCdbcQAvD_BwE)
     * Balsamiq Wireframes were used to create wireframes for UX design.
 * [Github](https://github.com/)
-    * This project uses Github as the hosting site, which stores the code and deploys the site through [Gitpages](https://pages.github.com/).
+    * This project uses Github as the hosting site, which stores the code.
 * [Coolors](https://coolors.co/)
     * This project uses a colour scheme made from the featured colour schemes on coolers.
 * [Jquery](https://jquery.com/)
     * Jquery is used in this project as a method of adding functionality in the js file.
 * [Mongodb](https://www.mongodb.com/)
     * Mongodb is used in this project to add content (recipes page) and functionality (login/register and CRUD functionality)
+* [Heroku](https://www.heroku.com)
+    * Heroku is used for the deployment of this app.
 
 ## Testing and Bug Fixes
 
