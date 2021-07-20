@@ -42,7 +42,25 @@
                     <strong class="small-text">Cooked using: {{ recipe.cooking_tool }}</strong>
                     <p class="small-text">Takes approximately {{ recipe.TTC }} minutes while {{ recipe.cooking_method }}.</p>
                     <p class="small-text">Find a link to this recipe <a href="{{ recipe.website_link }}" target="none"class="small-text link">here</a></p>
-                    <p class="small-text">This is a recipe native to {{ recipe.country_name }}</p>
+                    <p class="small-text">This is a recipe native to {{ recipe.country_name }}
+                    {% if recipe.country_name == "england" %}
+                        <span class="flag-icon flag-icon-gb-eng small-text"></span>
+                    {% elif recipe.country_name == "france" %}
+                        <span class="flag-icon flag-icon-fr small-text"></span>
+                    {% elif recipe.country_name == "greece" %}
+                        <span class="flag-icon flag-icon-gr small-text"></span>
+                    {% elif recipe.country_name == "america" %}
+                        <span class="flag-icon flag-icon-us small-text"></span>
+                    {% elif recipe.country_name == "japan" %}
+                        <span class="flag-icon flag-icon-jp small-text"></span>
+                    {% elif recipe.country_name == "china" %}
+                        <span class="flag-icon flag-icon-cn small-text"></span>
+                    {% elif recipe.country_name == "mexico" %}
+                        <span class="flag-icon flag-icon-mx small-text"></span>
+                    {% elif recipe.country_name == "italy" %}
+                        <span class="flag-icon flag-icon-it small-text"></span>
+                    {% endif %}
+                </p>
                     <p><em class="small-text">Recipe created by: {{ recipe.created_by }}.</em></p>
                 </div>
             </li>

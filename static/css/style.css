@@ -4,6 +4,7 @@
 --orange-yellow-crayola: #e9c46aff;
 --sandy-brown: #f4a261ff;
 --burnt-sienna: #e76f51ff;
+--thistle: #D8BFD8;
 */
 
 
@@ -41,4 +42,7 @@ body{
 }
 .link{
     color: #2a9d8fff;
+}
+.collapsible-body{
+    background-color: #D8BFD8;
 }

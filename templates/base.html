@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Alegreya&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css">
     <!-- My stylesheet -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
     {% block styles %}
@@ -22,7 +23,9 @@
         <!-- top navbar -->
         <nav class="charcoal-back">
             <div class="nav-wrapper">
-            <a href="#!" class="brand-logo">Logged in as {{ session.user }}</a>
+            {% if session.user %}
+                <a href="#!" class="brand-logo">Logged in as {{ session.user }}</a>
+            {% endif %}
             <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
             <ul class="right hide-on-med-and-down">
                 {% if session.user %}
