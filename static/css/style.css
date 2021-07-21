@@ -48,3 +48,6 @@ body{
 .collapsible-body{
     background-color: #D8BFD8;
 }
+.collapsible-header{
+    height:7rem;
+}
