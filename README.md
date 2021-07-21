@@ -91,7 +91,14 @@ To access these wireframes seperately, click the links below:
 The main divergence from my wireframes is that I have a message in the left of the navbar shwoing the session user's username. Other than that, the project is relatively close to how the wireframes predict.
 # Features
 
-### Features I Would Have Liked To Implement
+
+## Existing Features
+
+### CRUD operation
+- Can Create by using the add function in the Add a Recipe page
+- Can Read through the Recipe page
+- Can Update by pressing the edit button on your own recipe in the Recipe page
+- Can Delete by pressing the delete button on your own recipe in the Recipe page
 
 ## Technologies
 * HTML
