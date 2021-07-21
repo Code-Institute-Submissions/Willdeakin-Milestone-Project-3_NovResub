@@ -13,20 +13,14 @@
 }
 
 
+/*---------------------------------------------------Navbar*/
+.session-user{
+    font-size: 2.5rem;;
+}
+/*---------------------------------------------------Body*/
 
 body{
     font-family: 'Alegreya', serif;
-}
-.charcoal{
-    color: #264653ff;
-}
-.charcoal-back{
-    background-color: #264653ff;
-}
-.persian-green-button{
-    background-color: #2a9d8fff;
-    align-content: center;
-    position: relative;
 }
 .heading-text{
     font-size: 2rem;
@@ -39,13 +33,17 @@ body{
     padding-right: 1.5rem;
     color: #2a9d8fff;
 }
-.vegan{
-    position: absolute;
-    left:5;
+/*---------------------------------------------------Interactive Elements*/
+.charcoal{
+    color: #264653ff;
 }
-.veggie{
-    position: absolute;
-    left:15;
+.charcoal-back{
+    background-color: #264653ff;
+}
+.persian-green-button{
+    background-color: #2a9d8fff;
+    align-content: center;
+    position: relative;
 }
 .link{
     color: #2a9d8fff;

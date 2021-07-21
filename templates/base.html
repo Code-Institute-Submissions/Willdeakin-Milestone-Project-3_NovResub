@@ -24,7 +24,7 @@
         <nav class="charcoal-back">
             <div class="nav-wrapper">
             {% if session.user %}
-                <a href="#!" class="brand-logo">Logged in as {{ session.user }}</a>
+                <span class="session-user">Logged in as {{ session.user }}</span>
             {% endif %}
             <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
             <ul class="right hide-on-med-and-down">

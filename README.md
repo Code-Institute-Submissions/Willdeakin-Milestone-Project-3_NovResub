@@ -41,7 +41,7 @@ The website is contained within multiple html pages, which all extend from base.
 I used aspects of a colour scheme from the featured section of coolers. The background of the website is white as standard, with the nav and collapsible elements being charcoal: #264653ff, buttons and other interactive elements as persian green: #2a9d8fff and the background of the collapsible elements' bodies being thistle: #D8BFD8 to contrast with the flags in the body.
 
 ##### Typography
-I have used (()) for the full website, across the navbar and the body.
+I have used Alegreya for the full website, across the navbar and the body.
 
 ##### Images
 I used no images across this website, only using [Flag-icons](https://flagicons.lipis.dev/) and [Fontawesome](https://fontawesome.com/) for icons within the website.
@@ -63,6 +63,11 @@ Browse recipe Page
 
 ![My browse recipe wireframes](/wireframes/browse_recipes.png)
 
+To access these wireframes seperately, click the links below:
+* [Register wireframes](/wireframes/register.png)
+* [Login wireframes](/wireframes/login.png)
+* [Add Recipe wireframes](/wireframes/add_recipe.png)
+* [Browse Recipe wireframes](/wireframes/browse_recipes.png)
 ##### Divergences from my wireframes
 
 # Features
