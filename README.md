@@ -124,6 +124,62 @@ The main divergence from my wireframes is that I have a message in the left of t
     * Heroku is used for the deployment of this app.
 
 ## Testing and Bug Fixes
+| Test Description  	|   Shorthand Reference	|
+|---	|---	|
+|   Layout should be preserved at all window sizes	|  TC1 	|
+|  Register a user	|   TC2 |
+|  Logout of the user 	|   TC3 |
+|  Login to the user 	|   TC4	|
+|  Add a recipe	|   TC5	|
+|  Edit a recipe	|   TC6	|
+|  Delete a recipe 	|   TC7	|
+
+#### TC1
+
+Testing process:
+- Open website in the tested browser
+- Right click and inspect element
+- Change device width for each size class (small, medium and large)
+
+Test case results for each browser:
+- Google chrome - Testing all 3 size classes, the webpage acted as desired and passed.
+- Microsoft edge - Testing all 3 size classes, the webpage acted as desired and passed.
+- Mozilla firefox - Testing all 3 size classes, the webpage acted as desired and passed.
+
+#### TC2
+Testing process:
+- Open website in the tested browser
+- Register a user through register.html
+
+#### TC3
+Testing process:
+- Open website in the tested browser
+- Logoutfrom the user using the logout link in the navbar
+
+#### TC4
+Testing process:
+- Open website in the tested browser
+- Login as a user through login.html
+
+#### TC5
+Testing process:
+- Open website in the tested browser
+- Add a recipe through add.html
+- Check the recipe is correct through recipe.html and the mongodb database
+
+#### TC6
+Testing process:
+- Open website in the tested browser
+- Edit a recipe through edit.html
+- Check the recipe is correct through recipe.html and the mongodb database
+
+#### TC7
+Testing process:
+- Open website in the tested browser
+- Delete a recipe through the delete button in recipe.html
+- Check the recipe is deleted through recipe.html and the mongodb database
+
+
 
 #### Notable bug fixes during coding and testing
 - Before my testing session, I had difficulty displaying the edit.html page which was easily fixed with a small change to the python code rendering the template.
