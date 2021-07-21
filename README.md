@@ -151,15 +151,30 @@ Testing process:
 - Open website in the tested browser
 - Register a user through register.html
 
+Test case results for each browser:
+- Google chrome - Registered user google and gained access to the blocked part of the website, passed.
+- Microsoft edge - Registered user edge1 and gained access to the blocked part of the website, passed.
+- Mozilla firefox - Registered user firefox and gained access to the blocked part of the website, passed.
+
 #### TC3
 Testing process:
 - Open website in the tested browser
 - Logoutfrom the user using the logout link in the navbar
 
+Test case results for each browser:
+- Google chrome - Logged out from user google successfully.
+- Microsoft edge - Logged out from user edge1 successfully.
+- Mozilla firefox - Logged out from user firefox successfully.
+
 #### TC4
 Testing process:
 - Open website in the tested browser
 - Login as a user through login.html
+
+Test case results for each browser:
+- Google chrome - Logged in to user google successfully.
+- Microsoft edge - Logged in to user edge1 successfully.
+- Mozilla firefox - Logged in to user firefox successfully.
 
 #### TC5
 Testing process:
@@ -167,11 +182,21 @@ Testing process:
 - Add a recipe through add.html
 - Check the recipe is correct through recipe.html and the mongodb database
 
+Test case results for each browser:
+- Google chrome - Added a recipe which can be seen in recipe.html and mongodb
+- Microsoft edge - Added a recipe which can be seen in recipe.html and mongodb
+- Mozilla firefox - Added a recipe which can be seen in recipe.html and mongodb
+
 #### TC6
 Testing process:
 - Open website in the tested browser
 - Edit a recipe through edit.html
 - Check the recipe is correct through recipe.html and the mongodb database
+
+Test case results for each browser:
+- Google chrome - Edited the recipe which can be seen as changed in recipe.html and mongodb
+- Microsoft edge - Edited the recipe which can be seen as changed in recipe.html and mongodb
+- Mozilla firefox - Edited the recipe which can be seen as changed in recipe.html and mongodb
 
 #### TC7
 Testing process:
@@ -179,10 +204,14 @@ Testing process:
 - Delete a recipe through the delete button in recipe.html
 - Check the recipe is deleted through recipe.html and the mongodb database
 
-
+Test case results for each browser:
+- Google chrome - Deleted the recipe and it cannot be seen in recipe.html or mongodb
+- Microsoft edge - Deleted the recipe and it cannot be seen in recipe.html or mongodb
+- Mozilla firefox - Deleted the recipe and it cannot be seen in recipe.html or mongodb
 
 #### Notable bug fixes during coding and testing
 - Before my testing session, I had difficulty displaying the edit.html page which was easily fixed with a small change to the python code rendering the template.
+- Before my testing session, I had difficulty displaying the dropdown fields in add.html and edit.html, which was simply a typing error inside the option value for each one.
 
 ## Deployment
 
