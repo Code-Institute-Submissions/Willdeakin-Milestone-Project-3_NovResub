@@ -225,8 +225,9 @@ Test case results for each browser:
 ### Project Creation
 This project was created in its own repository using Github under my account name. It is named Willdeakin/Milestone-Project-3, and all pushed files can be seen here.
 
-### Heroku
-
+### Accessing the project through Heroku
+- Access the Project using Heroku [here](https://milestone-project-3-willdeakin.herokuapp.com/)
+ 
 
 ## Credits
 - Code
