@@ -51,9 +51,6 @@ In the add page, there are multiple fields that operate with a dropdown choice. 
 In the recipes page, a user can edit and delete recipes that they have added. The purpose of this is to fulfill user story:
 > As a frequent visitor, I want to be able to perform CRUD operations on my own recipes within the website easily
 
-
-
-
 #### Design and Wireframes
 
 ##### Colour scheme
@@ -90,7 +87,6 @@ To access these wireframes seperately, click the links below:
 ##### Divergences from my wireframes
 The main divergence from my wireframes is that I have a message in the left of the navbar shwoing the session user's username. Other than that, the project is relatively close to how the wireframes predict.
 # Features
-
 
 ## Existing Features
 
@@ -131,6 +127,15 @@ The main divergence from my wireframes is that I have a message in the left of t
     * Heroku is used for the deployment of this app.
 
 ## Testing and Bug Fixes
+As this is a backend oriented project, the testing will have a large emphasis on functionality while also having to maintain layout and responsiveness to changes in screen size.
+Testing will be done across google chrome, mozilla firefox and microsoft edge at small (phone), medium (tablet/notebook) and large (any larger screen) sizes.
+
+
+To be considered successful, in each browser and at each size the webpage should;
+- Contain working and correct hyperlinks, both internal and external, with external links opening in a fresh tab.
+- Have no overlapping divs/ sections such that the layout is compromised.
+- Display a similar layout as to the wireframes provided above, with the exception of changes in layout design mentioned alongside the wireframes.
+
 | Test Description  	|   Shorthand Reference	|
 |---	|---	|
 |   Layout should be preserved at all window sizes	|  TC1 	|
@@ -225,16 +230,19 @@ Test case results for each browser:
 ### Project Creation
 This project was created in its own repository using Github under my account name. It is named Willdeakin/Milestone-Project-3, and all pushed files can be seen here.
 
+I used Gitpod to write and edit these files, using the bash terminal for saving, updating and version control of the project. For the purpose of this project, I used these commands:
+- git add -A; to add all files to the staging area
+- git commit -m "*message detailing the changes from the last version*"; to commit changes from the staging area to the local repository
+- git push; to push committed changes from the local repository to the Github repository
+
 ### Accessing the project through Heroku
 - Access the Project using Heroku [here](https://milestone-project-3-willdeakin.herokuapp.com/)
  
-
 ## Credits
 - Code
     - The code of this project was created by Will Deakin.
 
 - Content
     - The content of this project was created by Will Deakin.
-
 
 Thanks to my mentor Spencer Barriball for feedback and guidance for this project, which lead me in good stead.
