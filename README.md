@@ -38,7 +38,7 @@ The website is contained within multiple html pages, which all extend from base.
 #### Design and Wireframes
 
 ##### Colour scheme
-I used aspects of a colour scheme from the featured section of coolers. The background of the website is white as standard, with the nav and collapsible elements being charcoal: ![#264653ff](https://placehold.it/15/f7ff58ff/000000?text=+), buttons and other interactive elements as persian green: ![2a9d8fff](https://placehold.it/15/f7ff58ff/000000?text=+) and the background of the collapsible elements' bodies being thistle: ![#D8BFD8](https://placehold.it/15/f7ff58ff/000000?text=+) to contrast with the flags in the body.
+I used aspects of a colour scheme from the featured section of coolers. The background of the website is white as standard, with the nav and collapsible elements being charcoal: #264653ff, buttons and other interactive elements as persian green: #2a9d8fff and the background of the collapsible elements' bodies being thistle: #D8BFD8 to contrast with the flags in the body.
 
 ##### Typography
 I have used (()) for the full website, across the navbar and the body.
@@ -47,6 +47,21 @@ I have used (()) for the full website, across the navbar and the body.
 I used no images across this website, only using [Flag-icons](https://flagicons.lipis.dev/) and [Fontawesome](https://fontawesome.com/) for icons within the website.
 
 ##### Wireframes
+Register Page
+
+![My register wireframes](/wireframes/register.png)
+
+Login Page
+
+![My login wireframes](/wireframes/login.png)
+
+Add Recipe Page
+
+![My add recipe wireframes](/wireframes/add_recipe.png)
+
+Browse recipe Page
+
+![My browse recipe wireframes](/wireframes/browse_recipes.png)
 
 ##### Divergences from my wireframes
 

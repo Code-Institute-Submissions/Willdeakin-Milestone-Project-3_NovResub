@@ -34,11 +34,18 @@ body{
 .small-text{
     font-size: 1.2rem;
 }
-
 .eating-requirement{
     padding-left: 1.5rem;
     padding-right: 1.5rem;
     color: #2a9d8fff;
+}
+.vegan{
+    position: absolute;
+    left:5;
+}
+.veggie{
+    position: absolute;
+    left:15;
 }
 .link{
     color: #2a9d8fff;
