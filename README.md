@@ -31,7 +31,26 @@ My third Code Institute milestone project concerning  Backend Development
 ##### As a frequent visitor
 - As a frequent visitor, I want to be able to perform CRUD operations on my own recipes within the website easily
 #### Structure
-The website is contained within multiple html pages, which all extend from base.html. The navbar is constant across pages when logged in or logged out, and is collapsible at smaller screen sizes. 
+The website is contained within multiple html pages, which all extend from base.html. The navbar is constant across pages when logged in or logged out, and is collapsible at smaller screen sizes. The purpose of this is to fulfill user stories:
+> As a first time visitor, I want to easily navigate this website
+
+> As a first time visitor, I want to be able to use the website comfortably on any of my devices
+
+> As a returning visitor, I want the website to be intuitive 
+
+In the recipes page, there are collapsible elements which open to show more information on each recipe. The purpose of this is to fulfill user stories:
+> As a first time visitor, I want there to be recipes that have information about the dish
+
+> As a returning visitor, I want to be able to access more information about the recipes easily
+
+In the add page, there are multiple fields that operate with a dropdown choice. The purpose of this is to fulfill user story:
+> As a returning visitor, I want the website to be intuitive
+
+> As a frequent visitor, I want to be able to perform CRUD operations on my own recipes within the website easily
+
+In the recipes page, a user can edit and delete recipes that they have added. The purpose of this is to fulfill user story:
+> As a frequent visitor, I want to be able to perform CRUD operations on my own recipes within the website easily
+
 
 
 
@@ -69,7 +88,7 @@ To access these wireframes seperately, click the links below:
 * [Add Recipe wireframes](/wireframes/add_recipe.png)
 * [Browse Recipe wireframes](/wireframes/browse_recipes.png)
 ##### Divergences from my wireframes
-
+The main divergence from my wireframes is that I have a message in the left of the navbar shwoing the session user's username. Other than that, the project is relatively close to how the wireframes predict.
 # Features
 
 ### Features I Would Have Liked To Implement
