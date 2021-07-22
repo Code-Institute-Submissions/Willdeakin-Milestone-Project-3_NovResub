@@ -88,23 +88,26 @@ def add():
     if request.method == "POST":
         is_veggie = "on" if request.form.get("is_veggie") else "off"
         is_vegan = "on" if request.form.get("is_vegan") else "off"
-        
-        recipe = {
-            "recipe_name": request.form.get("recipe_name").lower(),
-            "cooking_method": request.form.get("cooking_method"),
-            "cooking_tool": request.form.get("cooking_tool"),
-            "TTC": request.form.get("TTC").lower(),
-            "website_link": request.form.get("website_link").lower(),
-            "country_name": request.form.get("country_name"),
-            "is_veggie": is_veggie,
-            "is_vegan": is_vegan,
-            "created_by": session["user"]
-            }
-        
-        mongo.db.recipe.insert_one(recipe)
-        flash("Recipe Successfully Added")
-        return redirect(url_for("recipes"))
+        if session.user:
+            recipe = {
+                "recipe_name": request.form.get("recipe_name").lower(),
+                "cooking_method": request.form.get("cooking_method"),
+                "cooking_tool": request.form.get("cooking_tool"),
+                "TTC": request.form.get("TTC").lower(),
+                "website_link": request.form.get("website_link").lower(),
+                "country_name": request.form.get("country_name"),
+                "is_veggie": is_veggie,
+                "is_vegan": is_vegan,
+                "created_by": session["user"]
+                }
+            
+            mongo.db.recipe.insert_one(recipe)
+            flash("Recipe Successfully Added")
+            return redirect(url_for("recipes"))
 
+    else:
+            flash("You need to log in or register")
+            return redirect(url_for("register"))
 
     methods = mongo.db.methods.find()
     tools = mongo.db.tools.find()
@@ -124,21 +127,24 @@ def edit(recipe_id):
     if request.method == "POST":
         is_veggie = "on" if request.form.get("is_veggie") else "off"
         is_vegan = "on" if request.form.get("is_vegan") else "off"
-        
-        submit = {
-            "recipe_name": request.form.get("recipe_name").lower(),
-            "cooking_method": request.form.get("cooking_method"),
-            "cooking_tool": request.form.get("cooking_tool"),
-            "TTC": request.form.get("TTC").lower(),
-            "website_link": request.form.get("website_link").lower(),
-            "country_name": request.form.get("country_name"),
-            "is_veggie": is_veggie,
-            "is_vegan": is_vegan,
-            "created_by": session["user"]
-        }
-        mongo.db.recipe.update({"_id": ObjectId(recipe_id)}, submit)
-        flash("Recipe Successfully Edited")
-        return redirect(url_for("recipes"))
+        if session.user:
+            submit = {
+                "recipe_name": request.form.get("recipe_name").lower(),
+                "cooking_method": request.form.get("cooking_method"),
+                "cooking_tool": request.form.get("cooking_tool"),
+                "TTC": request.form.get("TTC").lower(),
+                "website_link": request.form.get("website_link").lower(),
+                "country_name": request.form.get("country_name"),
+                "is_veggie": is_veggie,
+                "is_vegan": is_vegan,
+                "created_by": session["user"]
+            }
+            mongo.db.recipe.update({"_id": ObjectId(recipe_id)}, submit)
+            flash("Recipe Successfully Edited")
+            return redirect(url_for("recipes"))
+    else:
+        flash("You need to log in or register")
+        return redirect(url_for("register"))
 
     recipe = mongo.db.recipe.find_one({"_id": ObjectId(recipe_id)})
     methods = mongo.db.methods.find()
@@ -149,7 +155,7 @@ def edit(recipe_id):
 
 @app.route("/delete/<recipe_id>")
 def delete(recipe_id):
-    if session["user"] is None or "":
+    if session.user is None or "":
         flash("You need to log in or register")
         return redirect(url_for("recipes"))
     recipe = mongo.db.recipe.find({"_id":ObjectId(recipe_id)})
