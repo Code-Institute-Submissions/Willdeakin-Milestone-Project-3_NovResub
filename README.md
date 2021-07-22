@@ -240,6 +240,7 @@ I used Gitpod to write and edit these files, using the bash terminal for saving,
  
 ## Credits
 - Code
+    - The main structure of the app.py and base.html is inspired by the task manager mini project
     - Lines 160-168 of app.py are from [askpython](https://www.askpython.com/python-modules/flask/flask-error-handling)
     - The code of this project was created by Will Deakin.
 
