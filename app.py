@@ -111,7 +111,7 @@ def add():
     tools = mongo.db.tools.find()
     countries = mongo.db.countries.find()
     return render_template("add.html", methods=methods, tools=tools,
-        countries=countries)
+                           countries=countries)
 
 
 @app.route("/recipes")
@@ -148,7 +148,8 @@ def edit(recipe_id):
     methods = mongo.db.methods.find()
     tools = mongo.db.tools.find()
     countries = mongo.db.countries.find()
-    return render_template("edit.html", methods=methods, tools=tools, countries=countries, recipe=recipe)
+    return render_template("edit.html", methods=methods,
+                           tools=tools, countries=countries, recipe=recipe)
 
 
 @app.route("/delete/<recipe_id>")
@@ -156,23 +157,23 @@ def delete(recipe_id):
     if session["user"] is None or "":
         flash("You need to log in or register")
         return redirect(url_for("recipes"))
-    recipe = mongo.db.recipe.find({"_id":ObjectId(recipe_id)})
     mongo.db.recipe.remove({"_id": ObjectId(recipe_id)})
     flash("Recipe Successfully Deleted")
     return redirect(url_for("recipes"))
 
+
 # from https://www.askpython.com/python-modules/flask/flask-error-handling
 @app.errorhandler(404)
 def not_found_error(error):
-    return render_template('404.html'),404
+    return render_template('404.html'), 404
 
 
 @app.errorhandler(500)
 def internal_error(error):
-    return render_template('500.html'),500
+    return render_template('500.html'), 500
 
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
-            debug=True)
+            debug=False)
