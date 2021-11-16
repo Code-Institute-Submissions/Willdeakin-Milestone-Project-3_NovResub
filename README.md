@@ -127,6 +127,22 @@ The main divergence from my wireframes is that I have a message in the left of t
     * Heroku is used for the deployment of this app.
 
 ## Testing and Bug Fixes
+### Code Validation
+
+#### CSS
+style.css has been run through the W3C CSS Validation Service, giving no errors or warnings.
+
+#### Javascript
+script.js has been run through [JSHint](https://jshint.com/) and no warnings were given.
+There is 1 undefined variable: $, which is used in jquery and thus can be ignored.
+
+#### Python
+app.py has been run through [Extends Class Python Tester](https://extendsclass.com/python-tester.html) and returned no errors.
+app.py has also been tested using python3 -m flake8 in the terminal, which returns 2 errors:
+- ./app.py:9:5: F401 'env' imported but unused; which is unused as I have set variables in my gitpod and heroku settings and can be ignored.
+- ./app.py:23:1: E304 blank lines found after function decorator; which I cannot find the reason for, as there is no blank line found after and the function decorator is formatted the same as all others which did not return this error.
+
+### Browser Testing
 As this is a backend oriented project, the testing will have a large emphasis on functionality while also having to maintain layout and responsiveness to changes in screen size.
 Testing will be done across google chrome, mozilla firefox and microsoft edge at small (phone), medium (tablet/notebook) and large (any larger screen) sizes.
 
