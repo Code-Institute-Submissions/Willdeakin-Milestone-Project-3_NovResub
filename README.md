@@ -18,7 +18,16 @@ My third Code Institute milestone project concerning  Backend Development
 
 ## Purpose of the website
 
+### Who is this website for?
+This is a website for people wanting to look up and share recipes. 
+It should be user friendly such that the customer can easily access other people's recipes and share their own with ease.
+
+### What does it do?
+The user can use full CRUD functionality to create, update and delete your recipe on the website, while anyone on the website can read the posted recipes.
+
+
 ### User Experience Design
+
 #### User Stories
 
 ##### As a first time visitor:
@@ -128,6 +137,14 @@ The main divergence from my wireframes is that I have a message in the left of t
 
 ## Testing and Bug Fixes
 ### Code Validation
+
+#### HTML
+All HTML files have been run through the W3C Markup Validation Service; this service has given a few errors.
+- Error: Bad value has been given for lines containing urls, which is a consequence of using flask and can be ignored.
+- Error: Stray End Tag/ Start tag seen but an element of the same type was already open have both been given for base.html head and body tags.
+Each of these have been checked against the code and have only one ninstance despite the error.
+- Error: Text not allowed in element in this context has been given; this error is a consequence of using python in html and can be ignored.
+
 
 #### CSS
 style.css has been run through the W3C CSS Validation Service, giving no errors or warnings.
@@ -251,7 +268,26 @@ I used Gitpod to write and edit these files, using the bash terminal for saving,
 - git commit -m "*message detailing the changes from the last version*"; to commit changes from the staging area to the local repository
 - git push; to push committed changes from the local repository to the Github repository
 
-### Accessing the project through Heroku
+### Deployment
+
+For project deployment I used [Heroku](https://www.heroku.com/), a cloud platform where users can host their projects.
+For the purpose of this project the free version was suitable.
+All of the files were pushed to Heroku for this deployment.
+
+Heroku setup:
+- I created a new app by clicking on *New* and then *Create new app*
+- I named the new app milestone-project-3-willdeakin and chose the region europe
+
+Steps I took before deployment:
+
+- I froze all requirements using pip3 freeze > requirements.txt so that Heroku could load all dependencies upon deployment
+- I created a Procfile such that Heroku knows the necessary details to deploy correctly
+
+Before enabling automatic deploys, I had to set Config Vars in settings for the Mongo DB Name, URI etc.
+After adding all the necessary Config Vars, I enabled automatic deploys such that every subsequent push in my linked GitHub would push to Heroku also.
+- Every time the app deploys, this is seen in the Activity tab.
+
+### Accessing the Project Through Heroku
 - Access the Project using Heroku [here](https://milestone-project-3-willdeakin.herokuapp.com/)
  
 ## Credits

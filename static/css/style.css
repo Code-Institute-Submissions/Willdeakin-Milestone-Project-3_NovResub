@@ -30,6 +30,10 @@ body{
     padding-right: 1.5rem;
     color: #2a9d8fff;
 }
+.dietary-requirement{
+    margin: auto;
+    text-align: center;
+}
 /*---------------------------------------------------Interactive Elements*/
 .charcoal{
     color: #264653ff;

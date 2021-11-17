@@ -9,38 +9,34 @@
             <li>
                 <div class="collapsible-header white-text charcoal-back">
                     <div class="col s3">
-                        <strong class="heading-text">{{ recipe.recipe_name }}   </strong>
+                        <p>
+                        <strong class="heading-text">{{ recipe.recipe_name }}   <i class="fas fa-chevron-circle-down"></i></strong>
+                        </p>
+                    </div>
+                    <div class="dietary-requirement">
+                        {% if recipe.is_veggie == "on" %}
+                            <i class="fas fa-leaf tooltipped eating-requirement"
+                                    data-position="right" data-tooltip="vegetarian"></i>
+                                <p class="small-text">vegetarian</p>
+                        {% endif %}
+                        {% if recipe.is_vegan == "on" %}
+                            <i class="fas fa-leaf tooltipped eating-requirement"
+                                    data-position="right" data-tooltip="vegan"></i>
+                            <p class="small-text">vegan</p>
+                        {% endif %}
                     </div>
                     <div class="col s3">
-                        <i class="fas fa-chevron-circle-down"></i>
                         {% if session.user|lower == recipe.created_by|lower %}
                             <a href="{{ url_for('edit', recipe_id=recipe._id) }}" class="btn-small persian-green-button">Edit</a>
                             <a href="{{ url_for('delete', recipe_id=recipe._id) }}" class="btn-small persian-green-button">Delete</a>
 
                         {% endif %}
-                        
-                    </div>
-                    <div class="row">
-                        <div class="col s6">
-                            {% if recipe.is_veggie == "on" %}
-                                <i class="fas fa-leaf tooltipped eating-requirement"
-                                    data-position="right" data-tooltip="vegetarian"></i>
-                                    <p class="small-text">vegetarian</p>
-                            {% endif %}
-                        </div>
-                        <div class="col s6">
-                            {% if recipe.is_vegan == "on" %}
-                                <i class="fas fa-leaf tooltipped eating-requirement"
-                                    data-position="right" data-tooltip="vegan"></i>
-                                <p class="small-text">vegan</p>
-                            {% endif %}
-                        </div>
                     </div>
                 </div>
                 <div class="collapsible-body">
                     <strong class="small-text">Cooked using: {{ recipe.cooking_tool }}</strong>
                     <p class="small-text">Takes approximately {{ recipe.TTC }} minutes while {{ recipe.cooking_method }}.</p>
-                    <p class="small-text">Find a link to this recipe <a href="{{ recipe.website_link }}" target="none"class="small-text link">here</a></p>
+                    <p class="small-text">Find a link to this recipe <a href="{{ recipe.website_link }}" target="none" class="small-text link">here</a></p>
                     <p class="small-text">This is a recipe native to {{ recipe.country_name }}
                     {% if recipe.country_name == "england" %}
                         <span class="flag-icon flag-icon-gb-eng small-text"></span>
@@ -60,7 +56,7 @@
                         <span class="flag-icon flag-icon-it small-text"></span>
                     {% endif %}
                 </p>
-                    <p><em class="small-text">Recipe created by: {{ recipe.created_by }}.</em></p>
+                <p><em class="small-text">Recipe created by: {{ recipe.created_by }}.</em></p>
                 </div>
             </li>
             
