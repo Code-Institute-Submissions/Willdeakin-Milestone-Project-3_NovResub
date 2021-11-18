@@ -8,24 +8,26 @@
             
             <li>
                 <div class="collapsible-header white-text charcoal-back">
-                    <div class="col s3">
+                    <div class="col-6 s3">
                         <p>
                         <strong class="heading-text">{{ recipe.recipe_name }}   <i class="fas fa-chevron-circle-down"></i></strong>
                         </p>
                     </div>
-                    <div class="dietary-requirement">
                         {% if recipe.is_veggie == "on" %}
-                            <i class="fas fa-leaf tooltipped eating-requirement"
-                                    data-position="right" data-tooltip="vegetarian"></i>
-                                <p class="small-text">vegetarian</p>
+                            <div class="col-2 s3">
+                                <i class="fas fa-leaf tooltipped eating-requirement"
+                                        data-position="right" data-tooltip="vegetarian"></i>
+                                <p class="small-text eating-requirement white-text">vegetarian</p>
+                            </div>
                         {% endif %}
                         {% if recipe.is_vegan == "on" %}
-                            <i class="fas fa-leaf tooltipped eating-requirement"
-                                    data-position="right" data-tooltip="vegan"></i>
-                            <p class="small-text">vegan</p>
+                            <div class="col-2 s3">
+                                <i class="fas fa-leaf tooltipped eating-requirement"
+                                        data-position="right" data-tooltip="vegan"></i>
+                                <p class="small-text eating-requirement white-text">vegan</p>
+                            </div>
                         {% endif %}
-                    </div>
-                    <div class="col s3">
+                    <div class="col-2 s3">
                         {% if session.user|lower == recipe.created_by|lower %}
                             <a href="{{ url_for('edit', recipe_id=recipe._id) }}" class="btn-small persian-green-button">Edit</a>
                             <a href="{{ url_for('delete', recipe_id=recipe._id) }}" class="btn-small persian-green-button">Delete</a>

@@ -1,20 +1,5 @@
 # Milestone-Project-3
-My third Code Institute milestone project concerning  Backend Development
-
-## Table Of Contents
-* [Purpose of the website](#purpose-of-the-website)
-* [User Experience (UX)](#user-experience-design)
-    * [User Stories](#user-stories)
-    * [Structure](#structure)
-    * [Design and Wireframes](#design-and-wireframes)
-* [Features](#features)
-* [Technologies](#technologies)
-* [Testing and Bug Fixes](#testing-and-bug-fixes)
-* [Deployment](#deployment)
-    * [Project Creation](#project-creation)
-    * [Heroku](#using-heroku)
-    * [Locally](#run-locally)
-* [Credits](#credits)
+My third Code Institute milestone project concerning Backend Development.
 
 ## Purpose of the website
 
@@ -37,8 +22,10 @@ The user can use full CRUD functionality to create, update and delete your recip
 ##### As a returning visitor:
 - As a returning visitor, I want to be able to access more information about the recipes easily
 - As a returning visitor, I want the website to be intuitive 
+- As a returning visitor, I want to be able to create an account to post recipes
 ##### As a frequent visitor
-- As a frequent visitor, I want to be able to perform CRUD operations on my own recipes within the website easily
+- As a frequent visitor, I want to be able to update and delete my own recipes within the website easily
+- As a frequent visitor, I want to be able to quickly log in to my account to access the CRUD functionalitites of the website
 #### Structure
 The website is contained within multiple html pages, which all extend from base.html. The navbar is constant across pages when logged in or logged out, and is collapsible at smaller screen sizes. The purpose of this is to fulfill user stories:
 > As a first time visitor, I want to easily navigate this website
@@ -55,10 +42,13 @@ In the recipes page, there are collapsible elements which open to show more info
 In the add page, there are multiple fields that operate with a dropdown choice. The purpose of this is to fulfill user story:
 > As a returning visitor, I want the website to be intuitive
 
-> As a frequent visitor, I want to be able to perform CRUD operations on my own recipes within the website easily
+There is a Register and a Log In page available in the navbar
+> As a returning visitor, I want to be able to create an account to post recipes
+
+> As a frequent visitor, I want to be able to quickly log in to my account to access the CRUD functionalitites of the website
 
 In the recipes page, a user can edit and delete recipes that they have added. The purpose of this is to fulfill user story:
-> As a frequent visitor, I want to be able to perform CRUD operations on my own recipes within the website easily
+> As a frequent visitor, I want to be able to update and delete my own recipes within the website easily
 
 #### Design and Wireframes
 
@@ -72,21 +62,20 @@ I have used Alegreya for the full website, across the navbar and the body.
 I used no images across this website, only using [Flag-icons](https://flagicons.lipis.dev/) and [Fontawesome](https://fontawesome.com/) for icons within the website.
 
 ##### Wireframes
-Register Page
+Wireframes are linked here:
 
-![My register wireframes](/wireframes/register.png)
 
-Login Page
+- [Register Page](/wireframes/register.png)
 
-![My login wireframes](/wireframes/login.png)
 
-Add Recipe Page
 
-![My add recipe wireframes](/wireframes/add_recipe.png)
+- [Login Page](/wireframes/login.png)
 
-Browse recipe Page
 
-![My browse recipe wireframes](/wireframes/browse_recipes.png)
+- [Add Recipe Page](/wireframes/add_recipe.png)
+
+
+- [Browse recipe Page](/wireframes/browse_recipes.png)
 
 To access these wireframes seperately, click the links below:
 * [Register wireframes](/wireframes/register.png)
@@ -258,9 +247,9 @@ Test case results for each browser:
 - Before my testing session, I had difficulty displaying the edit.html page which was easily fixed with a small change to the python code rendering the template.
 - Before my testing session, I had difficulty displaying the dropdown fields in add.html and edit.html, which was simply a typing error inside the option value for each one.
 
-## Deployment
+## Version Control
 
-### Project Creation
+### Github
 This project was created in its own repository using Github under my account name. It is named Willdeakin/Milestone-Project-3, and all pushed files can be seen here.
 
 I used Gitpod to write and edit these files, using the bash terminal for saving, updating and version control of the project. For the purpose of this project, I used these commands:
@@ -268,7 +257,7 @@ I used Gitpod to write and edit these files, using the bash terminal for saving,
 - git commit -m "*message detailing the changes from the last version*"; to commit changes from the staging area to the local repository
 - git push; to push committed changes from the local repository to the Github repository
 
-### Deployment
+## Deployment
 
 For project deployment I used [Heroku](https://www.heroku.com/), a cloud platform where users can host their projects.
 For the purpose of this project the free version was suitable.
