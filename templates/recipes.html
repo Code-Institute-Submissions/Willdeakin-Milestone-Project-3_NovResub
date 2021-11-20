@@ -13,21 +13,35 @@
                         <strong class="heading-text">{{ recipe.recipe_name }}   <i class="fas fa-chevron-circle-down"></i></strong>
                         </p>
                     </div>
-                        {% if recipe.is_veggie == "on" %}
-                            <div class="col-2 s3">
+                        {% if recipe.is_veggie == "on" and recipe.is_vegan == "on" %}
+                        <div class="col s3">
+                            <i class="fas fa-leaf tooltipped eating-requirement"
+                                    data-position="right" data-tooltip="vegan"></i>
+                            <i class="fas fa-leaf tooltipped eating-requirement"
+                                    data-position="right" data-tooltip="vegetarian"></i>
+                            <div class="row">
+                                <span class="small-text requirement-text">vegetarian</span>
+                                <span class="small-text requirement-text">vegan</span>
+                            </div>
+                        </div>
+                        {% elif recipe.is_veggie == "on" %}
+                            <div class="col s3">
                                 <i class="fas fa-leaf tooltipped eating-requirement"
                                         data-position="right" data-tooltip="vegetarian"></i>
-                                <p class="small-text eating-requirement white-text">vegetarian</p>
+                                <div class="row">
+                                    <span class="small-text requirement-text">vegetarian</span>
+                                </div>
                             </div>
-                        {% endif %}
-                        {% if recipe.is_vegan == "on" %}
-                            <div class="col-2 s3">
+                        {% elif recipe.is_vegan == "on" %}
+                            <div class="col s3">
                                 <i class="fas fa-leaf tooltipped eating-requirement"
                                         data-position="right" data-tooltip="vegan"></i>
-                                <p class="small-text eating-requirement white-text">vegan</p>
+                                <div class="row">
+                                    <span class="small-text requirement-text">vegan</span>
+                                </div>
                             </div>
                         {% endif %}
-                    <div class="col-2 s3">
+                    <div class="col s3">
                         {% if session.user|lower == recipe.created_by|lower %}
                             <a href="{{ url_for('edit', recipe_id=recipe._id) }}" class="btn-small persian-green-button">Edit</a>
                             <a href="{{ url_for('delete', recipe_id=recipe._id) }}" class="btn-small persian-green-button">Delete</a>

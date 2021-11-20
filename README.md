@@ -1,15 +1,15 @@
 # Milestone-Project-3
-My third Code Institute milestone project concerning Backend Development.
 
 ## Purpose of the website
-
+This is my third Code Institute milestone project concerning Backend Development.
+This is a website for people wanting to look up and share recipes; I created it to be a fully responsive CRUD based web application which allows users to share recipes.
 ### Who is this website for?
-This is a website for people wanting to look up and share recipes. 
-It should be user friendly such that the customer can easily access other people's recipes and share their own with ease.
+The website is for users who want to look up recipes to use or share recipes that they have found useful.
+It should have all posted recipes available for the user such that they can find anything posted by another user or themselves.
 
 ### What does it do?
 The user can use full CRUD functionality to create, update and delete your recipe on the website, while anyone on the website can read the posted recipes.
-
+It should be user friendly such that the customer can easily access other people's recipes and share their own with ease.
 
 ### User Experience Design
 
@@ -27,7 +27,12 @@ The user can use full CRUD functionality to create, update and delete your recip
 - As a frequent visitor, I want to be able to update and delete my own recipes within the website easily
 - As a frequent visitor, I want to be able to quickly log in to my account to access the CRUD functionalitites of the website
 #### Structure
-The website is contained within multiple html pages, which all extend from base.html. The navbar is constant across pages when logged in or logged out, and is collapsible at smaller screen sizes. The purpose of this is to fulfill user stories:
+The website is contained within multiple html pages, which all extend from base.html. 
+The navbar is constant across pages when logged in or logged out, and is collapsible at smaller screen sizes.
+The navbar contains links to access The register, login and recipes pages of the website. 
+The structure of the website remains the same throughout all layouts; with the elements of each page simply extending horizontally upon the page changing sizes.
+
+The purpose of this is to fulfill user stories:
 > As a first time visitor, I want to easily navigate this website
 
 > As a first time visitor, I want to be able to use the website comfortably on any of my devices
@@ -243,6 +248,9 @@ Test case results for each browser:
 - Microsoft edge - Deleted the recipe and it cannot be seen in recipe.html or mongodb
 - Mozilla firefox - Deleted the recipe and it cannot be seen in recipe.html or mongodb
 
+
+Upon perfoming these tests using the deployed Heroku app, the app has been demonstrated as working as intended.
+
 #### Notable bug fixes during coding and testing
 - Before my testing session, I had difficulty displaying the edit.html page which was easily fixed with a small change to the python code rendering the template.
 - Before my testing session, I had difficulty displaying the dropdown fields in add.html and edit.html, which was simply a typing error inside the option value for each one.
@@ -278,11 +286,20 @@ After adding all the necessary Config Vars, I enabled automatic deploys such tha
 
 ### Accessing the Project Through Heroku
 - Access the Project using Heroku [here](https://milestone-project-3-willdeakin.herokuapp.com/)
+
+### To clone the repository
+- Select the Repository on Github .
+- Click on the "Clone or download" green button located to the top right of the File Structure table.
+- Click on the "clipboard icon" to the right of the Git URL to copy the web URL of the Clone.
+- Open your preferred Integrated Development Environment (IDE) and navigate to the terminal window.
+- Change the directory to your desired repository.
+- Paste the Git URL copied from above and enter.
+
  
 ## Credits
 - Code
     - The main structure of the app.py and base.html is inspired by the task manager mini project
-    - Lines 160-168 of app.py are from [askpython](https://www.askpython.com/python-modules/flask/flask-error-handling)
+    - Lines 164-172 of app.py are from [askpython](https://www.askpython.com/python-modules/flask/flask-error-handling)
     - The code of this project was created by Will Deakin.
 
 - Content

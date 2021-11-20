@@ -29,12 +29,15 @@ body{
     padding-left: 2rem;
     padding-right: 2rem;
     color: #2a9d8fff;
+    text-align: center;
 }
 .heading-text{
     margin: auto;
 }
-.col-2{
-    float:right;
+.requirement-text{
+    margin-right: 1rem;
+    margin-left: 1rem;
+    }
 }
 /*---------------------------------------------------Interactive Elements*/
 .charcoal{
